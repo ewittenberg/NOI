@@ -195,12 +195,12 @@ dodge <- position_dodge(width=0.9)
 bar + geom_bar(stat="identity",position=dodge) + 
   scale_fill_manual(values=c("#99d8c9", "#2ca25f","#006d2c"))  + 
   theme_bw()+ 
-  theme(axis.text.y = element_text(size=16), 
-        axis.text.x = element_text(size=16),
+  theme(axis.text.y = element_text(size=20), 
+        axis.text.x = element_text(size=20),
         strip.text.x = element_text(size=20),
         axis.title.y = element_text(size=20),
-        legend.title = element_text(size=14),
-        legend.text = element_text(size=14),
+        legend.title = element_text(size=20),
+        legend.text = element_text(size=20),
         axis.title.x = element_text(size=20))+
   scale_y_continuous(labels=percent, limits = c(0, 1))+
   labs(x="", y="Proportion of order for Verbs", fill="Language")
@@ -224,19 +224,19 @@ ggsave("Order_Verbs_Language.pdf", width=12, height=8, unit="in")
 
 bar <- ggplot(dat.counts, aes(x=order,y=Proportion, fill = language))
 dodge <- position_dodge(width=0.9)
-bar + geom_bar(stat="identity",position=dodge) + 
-  scale_fill_manual(values=c("#99d8c9", "#2ca25f","#006d2c"))  + 
+bar + geom_bar(stat="identity",position=dodge, color="black", size=0.2) + 
+  scale_fill_manual(values=c('#fc8d59','#ffffbf','#91cf60'))  + 
   theme_bw()+ 
-  theme(axis.text.y = element_text(size=16), 
-        axis.text.x = element_text(size=16),
-        strip.text.x = element_text(size=20),
-        axis.title.y = element_text(size=20),
-        legend.title = element_text(size=14),
-        legend.text = element_text(size=14),
-        axis.title.x = element_text(size=20))+
+  theme(axis.text.y = element_text(size=24), 
+        axis.text.x = element_text(size=24),
+        strip.text.x = element_text(size=24),
+        axis.title.y = element_text(size=24),
+        legend.title = element_text(size=20),
+        legend.text = element_text(size=20),
+        axis.title.x = element_text(size=24))+
   scale_y_continuous(labels=percent, limits = c(0, 1))+
   labs(x="", y="Proportion of order for Verbs", fill="Answer")
-ggsave("Order_Language_Verbs.pdf", width=12, height=8, unit="in")
+ggsave("Order_Language_Verbs.pdf", width=12, height=6, unit="in")
 
 
 #look at Vlast

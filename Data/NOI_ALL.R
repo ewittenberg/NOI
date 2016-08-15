@@ -197,6 +197,7 @@ bar + geom_bar(stat="identity",position=dodge) +
 ggsave("VerbalOrder_Language_Framesetters.pdf", width=12, height=8, unit="in")
 
 #look at Verbs
+str(dat)
 dat$Vorder <- as.factor(dat$Vorder)
 print(levels(dat$Vorder)) 
 dat$Vorder = factor(dat$Vorder,levels(dat$Vorder)[c(1,3,2)])
