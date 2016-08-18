@@ -75,6 +75,8 @@ tblALL                 # the contingency table
 chisq.test(tblALL) 
 
 str(dat)
+
+str(dat)
 Vlast <- droplevels(subset(dat, Vorder=="Vlast"))
 tblVlast = table(Vlast$action_order, Vlast$language) 
 tblVlast                 # the contingency table 
@@ -138,7 +140,7 @@ dat.counts$Proportion <- with(dat.counts,Count/dat.sums[cbind(language)])
 order <- factor(dat.counts$language)
 str(dat.counts)
 
-bar <- ggplot(dat.counts, aes(x=language,y=Proportion, fill = order))
+bar <- ggplot(dat.counts, aes(x=order,y=Proportion, fill = language))
 dodge <- position_dodge(width=0.9)
 bar + geom_bar(stat="identity",position=dodge) + 
   scale_fill_manual(values=c("#99d8c9", "#2ca25f","#006d2c"))  + 
@@ -151,7 +153,7 @@ bar + geom_bar(stat="identity",position=dodge) +
         legend.text = element_text(size=14),
         axis.title.x = element_text(size=20))+
   scale_y_continuous(labels=percent, limits = c(0, 1))+
-  labs(x="", y="Proportion of order for Framesetters", fill="Answer")
+  labs(x="", y="Proportion of order for Framesetters", fill="Language")
   ggsave("Order_Framesetters_Language.pdf", width=12, height=8, unit="in")
 
 bar <- ggplot(dat.counts, aes(x=order,y=Proportion, fill = language))
